@@ -1,0 +1,183 @@
+@use "../../../mixin.scss" as m;
+@use "../../../variables.scss" as v;
+
+
+.destinos{
+    padding: 0.1rem;
+    margin-top: 3rem;
+    &__grid{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.3rem;
+        @include m.tablet{
+            grid-template-columns: unset;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+.destino{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap:0.2rem;
+    cursor: pointer;
+    img{
+        max-width: 7rem;
+        max-height: 9rem;
+        @include m.tablet{
+            
+            max-height: 5.5rem;
+           
+        }
+        @include m.desktop{
+            max-width: 8rem;
+            max-height: unset;
+            
+        }
+    }
+    
+    h3{
+        margin: 0px;
+        
+    }
+
+    p{
+        margin: 0px;
+        @include m.tablet{
+            font-size: 0.9rem;
+        }
+        @include m.desktop{
+            font-size: unset;
+        }
+    }
+
+
+}
+
+.lugares{
+    padding: 0.25rem;
+    margin-top: 3rem;
+    &__grid{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(4, 20rem);
+        gap: 2rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scroll-snap-type:x mandatory;
+        @include m.tablet{
+            grid-template-columns: unset;
+            grid-template-columns: repeat(2, 1fr);
+            overflow: hidden;
+            gap: 2.5rem;
+        }
+        @include m.desktop{
+            grid-template-columns: unset;
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+
+}
+
+.lugar{
+    
+  scroll-snap-align: center;
+
+    &__img{
+        width: 100%;
+        
+        img{
+            width: 100%;
+            border-radius: 1rem;
+        }
+    }
+    
+}
+
+.anfitrion{
+    
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 15rem;
+    padding: 1rem;
+    background-image: linear-gradient(to bottom, v.$negro 0%, v.$negro 35%, transparent 35%), url("../../../assets/img/anfitrion.jpg");
+    background-size: 100%, 38rem;
+    background-position: center bottom;
+    border-radius: 1.5rem;
+    @include m.tablet{
+        grid-template-rows: unset;
+        grid-template-columns: repeat(2, 1fr);
+        background-image: linear-gradient(to right, v.$negro 0%, v.$negro 45%, transparent 50%), url("../../../assets/img/anfitrion.jpg");
+        background-size: 100%, 45rem;
+        row-gap: 10rem;
+        padding: 5rem;
+        background-position: right center;
+    }
+
+    &__contenido{
+        color: v.$blanco;
+    }
+
+    &__enlace{
+       
+        @include m.boton(v.$blanco, v.$negro);
+        font-size: 0.9rem;
+        width: 65%;
+        padding: 0.65rem;
+        margin: 0 auto;
+        @include m.tablet{
+            width: 85%;
+            margin: unset;
+        }
+        @include m.desktop{
+            width: 60%;
+        }
+
+    }
+
+    &__heading{
+        margin: 0px;
+        text-align: center;
+        @include m.tablet{
+            text-align: unset;
+        }
+    }
+}
+
+.experiencias{
+    padding: 0.25rem;
+    margin-top: 3rem;
+    &__grid{
+        padding: 0px;
+        display: grid;
+        grid-template-columns: repeat(3, 20rem);
+        gap: 2rem;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scroll-snap-type:x mandatory;
+        @include m.tablet{
+            grid-template-columns: unset;
+            grid-template-columns: repeat(3, 1fr);
+            overflow: hidden;
+            gap: 2.5rem;
+        }
+    }
+
+}
+
+.experiencia{
+    cursor: pointer;
+    scroll-snap-align: center;
+
+    &__img{
+        width: 100%;
+        
+        img{
+            width: 100%;
+        }
+    }
+    
+}

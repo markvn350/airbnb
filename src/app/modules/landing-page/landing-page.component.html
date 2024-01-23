@@ -1,0 +1,50 @@
+<section class="destinos contenedor">
+    <h2 class="destinos__heading">Descubre alojamientos populares</h2>
+    <ul class="destinos__grid">
+        <li class="destino" *ngFor="let destino of destinos; index as i">
+            <img src="../../../assets/img/icono_destino_{{i+1}}.png" alt="img__icono">
+            <div class="destino__contenido">
+                <h3>{{destino}}</h3>
+                <p>4 Horas en avion</p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section class="lugares contenedor">
+    <h2 class="lugares__heading">Vive en cualquier lugar del mundo</h2>
+    <div class="lugares__grid">
+        <div class="lugar" *ngFor="let C of lugarContent; index as i">
+            <div class="lugar__img">
+                <img src="../../../assets/img/vive_{{i+1}}.jpg" alt="img__vive">
+            </div>
+                <p class="lugar__nombre">{{C}}</p>
+        </div>
+    </div>
+
+
+</section>
+
+<section class="anfitrion contenedor">
+    <div class="anfitrion__contenido">
+        <h2 class="anfitrion__heading">Animate a ser anfitrion</h2>
+        <p class="anfitrion__texto">Comparte tu espaciopara ganar dinero extra y aprovechar nuevas oportunidades</p>
+        <a class="anfitrion__enlace">Mas informacion</a>
+    </div>
+</section>
+
+<main class="experiencias contenedor">
+    <h2 class="experiencias__heading">Descubre Experiencias</h2>
+    <p class="experiencias__descripcion">Actividades unicas con expertos locales, en persona o en linea</p>
+    <div class="experiencias__grid">
+        <div class="experiencia" *ngFor="let content of experienciaContent; index as i">
+            <div class="experiencia__img">
+                <img src="../../../assets/img/experiencia_{{i+1}}.jpg" alt="img__vive">
+            </div>
+                <h3 class="experiencia__titulo" *ngIf="i<2">Experiencias</h3>
+                <h3 class="experiencia__titulo" *ngIf="i==2">Experiencias en linea</h3>
+                <p class="experiencia__nombre">{{content}}</p>
+        </div>
+    </div>
+
+</main>
